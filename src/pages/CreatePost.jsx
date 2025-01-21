@@ -4,28 +4,58 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 const CreatePost = () => {
   const dispatch = useDispatch()
-  const idRef =useRef("")
-  const titleref = useRef("")
-  const authorRef = useRef("")
-  const contentRef = useRef("")
-  const handleAdd =(e)=>{
-    e.preventDefault()
-      const postData = {
-        id:idRef.current.value,
-        title: titleref.current.value,
-        authorName: authorRef.current.value,
-        content: contentRef.current.value,
-      }
-      console.log(postData)
-      dispatch(addPost(postData))
-      titleref.current.value=""
-      authorRef.current.value=""
-      contentRef.current.value=""
-      idRef.current.value=""
+  const idRef =useRef()
+  const titleref = useRef()
+  const authorRef = useRef()
+  const contentRef = useRef()
+  // const handleAdd =(e)=>{
+  //   e.preventDefault()
+  //     const postData = {
+  //       id:idRef.current.value,
+  //       title: titleref.current.value,
+  //       authorName: authorRef.current.value,
+  //       content: contentRef.current.value,
+  //     }
+  //     idRef&&titleref&&authorRef&&contentRef ? dispatch(addPost(postData)):alert("fill all fileds to make a post")
+  //     titleref.current.value=""
+  //     authorRef.current.value=""
+  //     contentRef.current.value=""
+  //     idRef.current.value=""
     
-  }
+  // }
+  const handleAdd = (e) => {
+    e.preventDefault();
+    // Validate input values
+    if (
+      !idRef.current.value.trim() ||
+      !titleref.current.value.trim() ||
+      !authorRef.current.value.trim() ||
+      !contentRef.current.value.trim()
+
+
+      
+    ) {
+      alert("Fill all fields to make a post");
+      return;
+    }
+    // Create post data object
+    const postData = {
+      id: idRef.current.value,
+      title: titleref.current.value,
+      authorName: authorRef.current.value,
+      content: contentRef.current.value,
+    };
+    // Dispatch the action
+    dispatch(addPost(postData));
+    // Clear the input fields
+    idRef.current.value = "";
+    titleref.current.value = "";
+    authorRef.current.value = "";
+    contentRef.current.value = "";
+  };
+  
   return (
-    <div className="max-w-lg mx-auto bg-gray-100 p-6 rounded-lg shadow-md mt-10">
+    <div className="max-w-lg mx-auto bg-gray-100 text-black p-6 rounded-lg shadow-md mt-10">
       <h1 className="text-2xl font-bold text-center mb-6">Create a New Post</h1>
       <form className="space-y-4">
         {/* Title Input */}

@@ -5,7 +5,7 @@ import AllRoutes from "./routes/AllRoutes";
 import "./App.css";
 function App() {
   return <>
-  <div className="max-w-[1080px] m-auto">
+  <div className="max-w-[1080px] m-auto bg-gray-800 text-white">
       <Header/>
       <AllRoutes/>
       <Footer/>

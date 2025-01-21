@@ -10,7 +10,7 @@ const Header = () => {
       </Link>
       <nav className="flex gap-6 text-lg font-medium">
         <Link to="/" className="hover:text-gray-700">Home</Link>
-        <button className="hover:text-gray-700 focus:outline-none">Login</button>
+        {/* <button className="hover:text-gray-700 focus:outline-none">Login</button> */}
         <Link to="create" className="hover:text-gray-700">Create</Link>
       </nav>
     </header>
