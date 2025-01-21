@@ -4,11 +4,11 @@ const PostSlice = createSlice({
   name: "PostSlice",
   initialState: {
     posts: [
-      {
-        title: "post one",
-        authorName: "Talha Nawaz",
-        content: "hello my post Number One",
-      },
+      // {
+      //   title: "post one",
+      //   authorName: "Talha Nawaz",
+      //   content: "hello my post Number One",
+      // },
     ],
   },
   reducers: {
