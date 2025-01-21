@@ -8,18 +8,17 @@ const CreatePost = () => {
   const titleref = useRef();
   const authorRef = useRef();
   const contentRef = useRef();
-
   const handleAdd = (e) => {
     e.preventDefault();
     // Validate input values
     if (
-      !idRef.current.value.trim() ||
+      !idRef.current.value.trim() || // trim ensure that empt spaces is not valid inputs
       !titleref.current.value.trim() ||
       !authorRef.current.value.trim() ||
       !contentRef.current.value.trim()
     ) {
       alert("Fill all fields to make a post");
-      return;
+      return;  // return from here without further proceeding
     }
     // Create post data object
     const postData = {
@@ -84,19 +83,3 @@ const CreatePost = () => {
 };
 
 export default CreatePost;
-///////////////////// handle add function without validation
-  // const handleAdd =(e)=>{
-  //   e.preventDefault()
-  //     const postData = {
-  //       id:idRef.current.value,
-  //       title: titleref.current.value,
-  //       authorName: authorRef.current.value,
-  //       content: contentRef.current.value,
-  //     }
-  //     idRef&&titleref&&authorRef&&contentRef ? dispatch(addPost(postData)):alert("fill all fileds to make a post")
-  //     titleref.current.value=""
-  //     authorRef.current.value=""
-  //     contentRef.current.value=""
-  //     idRef.current.value=""
-
-  // }
