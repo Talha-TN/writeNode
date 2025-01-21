@@ -4,20 +4,24 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 const CreatePost = () => {
   const dispatch = useDispatch()
+  const idRef =useRef("")
   const titleref = useRef("")
   const authorRef = useRef("")
   const contentRef = useRef("")
   const handleAdd =(e)=>{
     e.preventDefault()
       const postData = {
+        id:idRef.current.value,
         title: titleref.current.value,
         authorName: authorRef.current.value,
         content: contentRef.current.value,
       }
+      console.log(postData)
       dispatch(addPost(postData))
       titleref.current.value=""
       authorRef.current.value=""
       contentRef.current.value=""
+      idRef.current.value=""
     
   }
   return (
@@ -25,6 +29,12 @@ const CreatePost = () => {
       <h1 className="text-2xl font-bold text-center mb-6">Create a New Post</h1>
       <form className="space-y-4">
         {/* Title Input */}
+        <input
+         ref={idRef}
+          type="text"
+          placeholder="Enter post id"
+          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
         <input
          ref={titleref}
           type="text"

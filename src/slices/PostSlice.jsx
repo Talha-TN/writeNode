@@ -1,22 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { toast } from "react-toastify";
 const PostSlice = createSlice({
   name: "PostSlice",
   initialState: {
-    posts: [
-      // {
-      //   title: "post one",
-      //   authorName: "Talha Nawaz",
-      //   content: "hello my post Number One",
-      // },
-    ],
+    posts: [],
   },
   reducers: {
     addPost: (state, action) => {
       state.posts.push(action.payload);
+      toast.success("Post Created");
     },
     deletePost: (state, action) => {
-      state.posts.pop(action.payload);
+      state.posts = state.posts.filter((post) => post.id !== action.payload);
+      toast.error("Post Deleted");
     },
   },
 });
