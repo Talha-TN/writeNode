@@ -1,8 +1,9 @@
 import React from "react";
 import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
-
+import UseTitle from "../hooks/UseTitle.jsx"
 const Header = () => {
+  UseTitle("Home Page")
   return (
     <header className="flex items-center justify-between bg-gray-800 text-white px-4 py-3 shadow-md">
       <Link to="/" className="flex items-center">

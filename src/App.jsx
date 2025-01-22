@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import PostCard from "./components/PostCard"
 import AllRoutes from "./routes/AllRoutes";
 import "./App.css";
 function App() {

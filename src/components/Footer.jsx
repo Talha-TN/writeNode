@@ -6,9 +6,7 @@ const Footer = () => {
         {/* Logo and Description */}
         <div className="mb-6 md:mb-0">
           <h1 className="text-2xl font-bold">writeNode</h1>
-          <p className="text-gray-400 mt-2">
-            Creating dynamic Posts .
-          </p>
+          <p className="text-gray-400 mt-2">Creating dynamic Posts .</p>
         </div>
 
         {/* Quick Links */}
@@ -52,7 +50,6 @@ const Footer = () => {
         <p className="text-gray-400 text-sm">
           © 2025 writeNode. All rights reserved.
         </p>
-
       </div>
     </footer>
   );
